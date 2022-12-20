@@ -1,9 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/services/prisma/prisma.service';
 import { CreateTimelineDto } from './dto/create-timeline.dto';
 import { UpdateTimelineDto } from './dto/update-timeline.dto';
 
 @Injectable()
 export class TimelineService {
+  constructor(private prisma: PrismaService) {}
+
   create(createTimelineDto: CreateTimelineDto) {
     return 'This action adds a new timeline';
   }

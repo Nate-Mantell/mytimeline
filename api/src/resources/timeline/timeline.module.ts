@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TimelineService } from './timeline.service';
 import { TimelineController } from './timeline.controller';
+import { PrismaModule } from 'src/services/prisma/prisma.module';
 
 @Module({
   controllers: [TimelineController],
-  providers: [TimelineService]
+  providers: [TimelineService],
+  imports: [PrismaModule],
 })
 export class TimelineModule {}
